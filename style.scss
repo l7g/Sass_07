@@ -1,0 +1,18 @@
+@use 'random-hex';
+
+@mixin bounce($duration: null, $start: null, $distance: null) {
+    @keyframes myAnimation {
+       0% {transform: translate($start)}
+       40% {transform: translate(0, $distance)}
+       80% {transform: translate(0, calc($distance / 2))} 
+       100% {transform: translate($start)}
+    }
+    animation: myAnimation $duration;
+}
+
+.bounce {
+    height: 200px;
+    width: 400px;
+    background-color: random-hex.random-hex();
+    @include bounce(1s, 0, -30px);
+}

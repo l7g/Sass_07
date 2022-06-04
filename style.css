@@ -1,0 +1,22 @@
+.bounce {
+  height: 200px;
+  width: 400px;
+  background-color: #372286;
+  animation: myAnimation 1s;
+}
+@keyframes myAnimation {
+  0% {
+    transform: translate(0);
+  }
+  40% {
+    transform: translate(0, -30px);
+  }
+  80% {
+    transform: translate(0, -15px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
