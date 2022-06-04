@@ -1,7 +1,31 @@
-.bounce {
+body .bg-random, body .bounce {
   height: 200px;
-  width: 400px;
-  background-color: #372286;
+  width: 200px;
+  background-color: green;
+  animation: myAnimation 1s;
+}
+@keyframes myAnimation {
+  0% {
+    transform: translate(0);
+  }
+  40% {
+    transform: translate(0, -30px);
+  }
+  80% {
+    transform: translate(0, -15px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+body {
+  display: flex;
+  justify-content: space-around;
+}
+body .bg-random {
+  border-radius: 50%;
+  background-color: #3367B8;
   animation: myAnimation 1s;
 }
 @keyframes myAnimation {

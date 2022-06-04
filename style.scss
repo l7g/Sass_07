@@ -10,9 +10,24 @@
     animation: myAnimation $duration;
 }
 
-.bounce {
+%bounce {
     height: 200px;
-    width: 400px;
+    width: 200px;
+    background-color: green;
+    @include bounce(1s, 0, -30px);
+}
+
+body {
+    display: flex;
+    justify-content: space-around;
+    .bounce {
+    @extend %bounce;
+}
+
+.bg-random {
+    @extend %bounce;
+    border-radius: 50%;
     background-color: random-hex.random-hex();
     @include bounce(1s, 0, -30px);
+}
 }
