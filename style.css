@@ -1,46 +1,80 @@
-body .bg-random, body .bounce {
+body .bounce, body .bg-random {
   height: 200px;
   width: 200px;
   background-color: green;
-  animation: myAnimation 1s;
+  -webkit-animation: myAnimation 1s infinite;
+          animation: myAnimation 1s infinite;
 }
-@keyframes myAnimation {
+
+@-webkit-keyframes myAnimation {
   0% {
-    transform: translate(0);
+    -webkit-transform: translate(0);
+            transform: translate(0);
   }
   40% {
-    transform: translate(0, -30px);
+    -webkit-transform: translate(0, -30px);
+            transform: translate(0, -30px);
   }
   80% {
-    transform: translate(0, -15px);
+    -webkit-transform: translate(0, calc($distance / 2));
+            transform: translate(0, calc($distance / 2));
   }
   100% {
-    transform: translate(0);
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+@keyframes myAnimation {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  40% {
+    -webkit-transform: translate(0, -30px);
+            transform: translate(0, -30px);
+  }
+  80% {
+    -webkit-transform: translate(0, calc($distance / 2));
+            transform: translate(0, calc($distance / 2));
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
   }
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-}
-body .bg-random {
-  border-radius: 50%;
-  background-color: #3367B8;
-  animation: myAnimation 1s;
-}
-@keyframes myAnimation {
-  0% {
-    transform: translate(0);
-  }
-  40% {
-    transform: translate(0, -30px);
-  }
-  80% {
-    transform: translate(0, -15px);
-  }
-  100% {
-    transform: translate(0);
-  }
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
+body .bg-random {
+  border-radius: 50%;
+  background-color: #1;
+  -webkit-animation: myAnimation 1s infinite;
+          animation: myAnimation 1s infinite;
+}
+
+@keyframes myAnimation {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  40% {
+    -webkit-transform: translate(0, -30px);
+            transform: translate(0, -30px);
+  }
+  80% {
+    -webkit-transform: translate(0, calc($distance / 2));
+            transform: translate(0, calc($distance / 2));
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
 /*# sourceMappingURL=style.css.map */

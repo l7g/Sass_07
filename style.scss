@@ -1,4 +1,19 @@
-@use 'random-hex';
+@function random-hex() {
+    $color: '#';
+    $i: 1;
+    $letters: A, B, C, D, E, F;
+
+    @while $i <=6 {
+        $number: random($limit: 15);
+        @if ($number > 9) {
+            $randomnum: random($limit: 6);
+            $color: $color + $lettter#{$randomnum};
+        } @else {
+            $color: $color + $number;
+        }
+        @return unquote($string: $color);
+    }
+}
 
 @mixin bounce($duration: null, $start: null, $distance: null) {
     @keyframes myAnimation {
@@ -7,7 +22,7 @@
        80% {transform: translate(0, calc($distance / 2))} 
        100% {transform: translate($start)}
     }
-    animation: myAnimation $duration;
+    animation: myAnimation $duration infinite;
 }
 
 %bounce {
@@ -27,7 +42,7 @@ body {
 .bg-random {
     @extend %bounce;
     border-radius: 50%;
-    background-color: random-hex.random-hex();
+    background-color: random-hex();
     @include bounce(1s, 0, -30px);
 }
 }
